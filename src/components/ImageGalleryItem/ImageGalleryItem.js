@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import style from './ImageGalleryItem.module.css';
 
 class ImageGalleryItem extends Component {
   static defaultProps = { imageLink: ' ', imageAlt: ' ' };
@@ -13,7 +14,7 @@ class ImageGalleryItem extends Component {
 
   render() {
     return (
-      <li className="ImageGalleryItem">
+      <li className={style.ImageGalleryItem}>
         <img
           onClick={e => {
             this.props.modalFn(e.target.attributes[2].value);
@@ -22,7 +23,7 @@ class ImageGalleryItem extends Component {
           src={this.props.imageLink}
           alt={this.props.imageAlt}
           data-large={this.props.largeImageURL}
-          className="ImageGalleryItem-image"
+          className={style.ImageGalleryItem_image}
         />
       </li>
     );

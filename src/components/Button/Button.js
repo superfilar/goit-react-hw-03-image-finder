@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import style from './Button.module.css';
 
 class Button extends Component {
   static propTypes = { fn: propTypes.func };
@@ -10,7 +11,11 @@ class Button extends Component {
       behavior: 'smooth',
     });
     return (
-      <button className="Button" type="button" onClick={e => this.props.fn()}>
+      <button
+        className={style.Button}
+        type="button"
+        onClick={e => this.props.fn()}
+      >
         Load more
       </button>
     );

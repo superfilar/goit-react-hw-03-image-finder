@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import style from './SearchBar.module.css';
 
 class Searchbar extends Component {
   static propTypes = { onSubmit: propTypes.func };
   render() {
     return (
-      <header className="Searchbar">
+      <header className={style.Searchbar}>
         <form
-          className="SearchForm"
+          className={style.SearchForm}
           onSubmit={event => this.props.onSubmit(event)}
         >
-          <button type="submit" className="SearchForm-button">
+          <button type="submit" className={style.SearchForm_button}>
             <svg
-              className="SearchForm-button-svg"
+              className={style.SearchForm_button_svg}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -23,11 +24,11 @@ class Searchbar extends Component {
                 fill="currentColor"
               />
             </svg>
-            <span className="SearchForm-button-label">Search</span>
+            <span className={style.SearchForm_button_label}>Search</span>
           </button>
 
           <input
-            className="SearchForm-input"
+            className={style.SearchForm_input}
             type="text"
             name="form-input"
             autoComplete="off"
